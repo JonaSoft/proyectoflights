@@ -1,0 +1,53 @@
+[
+{	
+"cliente":	"AM1MEXMAD16/09/2019_16/09/2019",
+"market":	"AM",
+"flightini":	"1",
+"origen":	"MEX",
+"destino":	"MAD",
+"codope":	"AM",
+"fechainit":	"16/09/2019",
+"fechaend":	"16/09/2019",
+"frecuencia":	"lunes",
+"clase":	"**",
+"comentario":	"Flight not Codeshare",
+"flightope":	"11",
+"timedep":	"18:25",
+"timearr":	"12:40",
+"fechareg":	"16/09/2019"
+},	
+{	
+"cliente":	"AM2MADMEX16/09/2019_16/09/2019",
+"market":	"AM",
+"flightini":	"22",
+"origen":	"MAD",
+"destino":	"MEX",
+"codope":	"AM",
+"fechainit":	"16/09/2019",
+"fechaend":	"16/09/2019",
+"frecuencia":	"lunes",
+"clase":	"**",
+"comentario":	"Flight not Codeshare",
+"flightope":	"22",
+"timedep":	"14:40",
+"timearr":	"19:00",
+"fechareg":	"16/09/2019"
+},	
+{	
+"cliente":	"AM3MEXCDG16/09/2019_16/09/2019",
+"market":	"AM",
+"flightini":	"33",
+"origen":	"MEX",
+"destino":	"CDG",
+"codope":	"AM",
+"fechainit":	"16/09/2019",
+"fechaend":	"16/09/2019",
+"frecuencia":	"lunes",
+"clase":	"**",
+"comentario":	"Flight not Codeshare",
+"flightope":	"3",
+"timedep":	"23:55",
+"timearr":	"17:45",
+"fechareg":	"16/09/2019"
+}	
+]

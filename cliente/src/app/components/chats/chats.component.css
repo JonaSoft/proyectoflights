@@ -1,0 +1,30 @@
+.contenedorchat {
+    border: 3px outset black;
+    width: 100%;
+    max-width: 300px;
+    min-width: 220px;
+    height: auto;
+    background: black;
+    color: gray;
+    font-family: cursive;
+    font-size: 12px;
+    border-radius: 5px 5px 5px 5px;
+    margin: auto;
+}
+
+.chat-window {
+    min-width: 210px;
+    height: 300px;
+    overflow: hidden;
+    border: 3px outset gray;
+    border-radius: 20px;
+    padding: 0px
+}
+
+.app-mensajes {
+    overflow-y: scroll;
+    height: 270px;
+    padding: 3px;
+    font-family: cursive;
+    font-size: 14px;
+}
