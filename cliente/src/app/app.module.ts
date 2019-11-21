@@ -19,6 +19,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { EnviarHaciaComponent } from './components/enviar-hacia/enviar-hacia.component';
 import { LoginComponent } from './components/login/login.component';
+import { CiudadesComponent } from './components/ciudades/ciudades.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoginComponent } from './components/login/login.component';
     FooterComponent,
     ChatsComponent,
     EnviarHaciaComponent,
-    LoginComponent
+    LoginComponent,
+    CiudadesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
 
 <div class="fondomain container-fluid  animated fast fadeIn">
-    <div class="row">
+    <div class="row text-center">
         <br>
-        <div class="col-lg-2 col-md-12 container-fluid" style="margin-top:5px;height:auto;">
+        <div class="col-lg-2 col-md-12 container-fluid" style="margin-top:5px;height:100%;">
             <div id="formulario" class="col-lg-12 col-md-12">
-                <div class="col-lg-12 col-md-12 container-fluid inputform caja" style="height:100%;margin:auto;width:90%;">
+                <div class="col-lg-12 col-md-12 container-fluid inputform caja" style="height:100%;margin:auto;width:100%;">
                     <form  [formGroup]="forma"  (ngSubmit)="enviarForm()" class="formbusqueda  animated  fast fadeIn">
                         <div class="col-md-12 text-center" style="margin:auto; font-family:cursive;font-size:12px;">
                             <h6>Flights Report</h6>
@@ -107,7 +107,7 @@
             </div>
             
         </div>
-        <div class="col-lg-9 col-md-12 container-fluid">
+        <div class="col-lg-8 col-md-12 container-fluid">
             <div class="row">
                 <div class="container-fluid col-lg-12">
 
@@ -128,10 +128,10 @@
 
           
                 <!--<div class="container-fluid col-sm-12  align-items-center animated  fadein fast">-->
-                    <div *ngIf="mostrar" class="container-fluid col-lg-12 col-sm-12 animated fadeIn" style="padding:0px;height:auto;width:95%; margin-bottom:auto;">
+                    <div *ngIf="mostrar" class="container-fluid col-lg-12 col-sm-12 animated fadeIn" style="padding:0px;height:auto;width:100%; margin-bottom:auto;">
                         <br>
-                        <table class="table table-responsive align-middle" style="background:white;opacity:0.85;width:80%;margin-left:40px;padding:0px;overflow-y: scroll;height:auto;max-height:600px;min-height:100px;width:90%;margin-top:3%;">
-                            <thead class="" style="background-color:rgba(14, 10, 49, 0.945); color:white;z-index:1;margin:0px;font-size:10px; border:1px solid black;width:95%;cursor:pointer;">
+                        <table class="table table-responsive align-middle" style="background:white;opacity:0.85;width:100%;padding:0px;overflow-y: scroll;height:auto;max-height:600px;min-height:100px;width:100%;margin-top:3%;">
+                            <thead class="" style="background-color:rgba(14, 10, 49, 0.945); color:white;z-index:1;margin:0px;font-size:10px; border:1px solid black;width:100%;cursor:pointer;">
                                 <th> # </th>
                                 <th> FLIGHT </th>
                                 <th> ORIG </th>
@@ -207,7 +207,13 @@
             <br>
             
         </div>
-        
+        <div class="col-lg-2  col-md-12 container-fluid"  style="margin-top:5px;height:100%;">
+            <div class="row">
+                <div class="col container-fluid">
+                    <app-ciudades></app-ciudades>
+                </div>
+            </div>    
+        </div>
        
     </div>
    

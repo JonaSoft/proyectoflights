@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(require('../server/routes/routesclient'));
 //app.use(require('../server/uploads/uploadImagen'));
-let carga = require('./uploads/cargaMasiva')
+let ciudades = require('./uploads/ciudades')
 
 // parse application/json
 app.use(bodyParser.json())
@@ -33,4 +33,7 @@ app.listen(process.env.PORT, async () => {
     /*await carga.cargaMasiva((err) =>{
         if (err)console.log(err);
     });*/
+    await ciudades.mostrarCiudades((err) =>{
+        if (err)console.log(err);
+    });
 });
