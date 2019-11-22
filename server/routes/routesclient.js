@@ -1,12 +1,35 @@
 /*jshint esversion: 8 */
+//require('../uploads/ciudades')
 const express = require('express');
 const modeloFlight = require('../models/flights');
 const fs = require('fs');
 const path = require('path');
 const fileUpload = require('express-fileupload');
 const app = express();
+//let ciudades = require('../uploads/ciudades')
 app.use(fileUpload({ useTempFiles: true }));
+let paises=[];
 
+//obtener todos los paises
+app.get('/flights/paises',async(req,res)=>{
+    let archivoOrigen ='server/assets/paises.json';
+    fs.readFile(archivoOrigen, 'utf8', async(err, data)=> {
+        if (err){
+            reject(err) 
+        }else{
+                data = data.trim();
+                obj = JSON.parse(data);
+                for (let i in obj){
+                    paises.push(obj[i])
+                }
+                res.json({
+                    ok: true,
+                    paises
+                })     
+        }
+    })
+    return     
+}) 
 
 //obtener todos los flights
 app.get('/flights', async(req, res) => {
@@ -19,7 +42,7 @@ app.get('/flights', async(req, res) => {
     //let parametro=cadena.substr(16,2);
     //console.log(parametro);
 
-    
+   
 
     //CONSULTA MARKET Y FLIGHTINI
     if (cadena.startsWith("market=",9) && cadena.startsWith("flightini=",19)) {
@@ -341,5 +364,6 @@ app.get('/flights/img/:img', async(req, res) => {
        return    
     
 });
+
 
 module.exports=app;
