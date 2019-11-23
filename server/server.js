@@ -34,7 +34,4 @@ app.listen(process.env.PORT, async () => {
     /*await carga.cargaMasiva((err) =>{
         if (err)console.log(err);
     });*/
-    /*await ciudades.mostrarCiudades((err) =>{
-        if (err)console.log(err);
-    });*/
 });

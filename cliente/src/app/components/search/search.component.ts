@@ -106,13 +106,8 @@ export class SearchComponent implements OnInit {
   seeFlight (cliente:any){
     console.log(cliente);
     this.dataService.mostrarFlight(cliente)
-    /*.subscribe(res =>{
-      console.log(res)
-      
-    })*/
-   
-      window.open(`http://localhost:3000/flights/img/${cliente}`, "","directories=yes, location=yes, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=950, height=650"); 
-      return
+    window.open(`http://localhost:3000/flights/img/${cliente}`, "","directories=yes, location=yes, menubar=no, scrollbars=yes, statusbar=no, tittlebar=no, width=950, height=650"); 
+    return
   }
   buscaWeb(clientes:any){
     console.log(clientes);
