@@ -10,25 +10,25 @@ const app = express();
 app.use(fileUpload({ useTempFiles: true }));
 let paises=[];
 
-//obtener todos los paises
+//obtener paises
 app.get('/flights/paises',async(req,res)=>{
-    let archivoOrigen ='server/assets/paises.json';
+    paises=[]
+    let archivoOrigen=" "
+    archivoOrigen ='server/assets/paises.json';
     fs.readFile(archivoOrigen, 'utf8', async(err, data)=> {
         if (err){
             reject(err) 
         }else{
-                data = data.trim();
-                obj = JSON.parse(data);
-                for (let i in obj){
-                    paises.push(obj[i])
-                }
-                res.json({
-                    ok: true,
-                    paises
-                })     
+            data = data.trim();
+            obj = JSON.parse(data);
+            for (let i in obj){
+                paises.push(obj[i])
+            }
+            res.json({
+               paises
+            })     
         }
     })
-    return     
 }) 
 
 //obtener todos los flights
