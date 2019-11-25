@@ -3,31 +3,32 @@
     width: 100%;
     max-width: 300px;
     min-width: 220px;
-    height: 600px;
-    background:  #0B173B;
+    height: 800px;
+    background: #0B173B;
     color: rgb(247, 241, 241);
     font-family: cursive;
     font-size: 12px;
     border-radius: 5px 5px 5px 5px;
     margin: auto;
-    padding:3px
+    padding: 3px;
+    opacity: 0.85;
 }
 
 .cities-window {
     min-width: 210px;
-    height: 500px;
+    height: 720px;
     overflow: hidden;
     border: 3px outset gray;
     border-radius: 20px;
     padding: 0px;
-    background:rgb(242, 243, 156);
+    background: rgb(242, 243, 156);
     color: black;
-    border-radius:5px 5px 5px 5px
+    border-radius: 5px 5px 5px 5px
 }
 
 .app-paises {
     overflow-y: scroll;
-    height: 550px;
+    height: 700px;
     padding: 2px;
     font-family: cursive;
     font-size: 12px;

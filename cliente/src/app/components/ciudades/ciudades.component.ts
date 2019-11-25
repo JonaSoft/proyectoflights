@@ -9,7 +9,7 @@ import { PaisesService } from '../../servicios/paises.service'
 export class CiudadesComponent implements OnInit {
 
   constructor(private paises:PaisesService) { }
-  private data = [];
+  public data = [];
   ngOnInit() {
     //this.data=[]
     this.paises.mostrarDataPaises()

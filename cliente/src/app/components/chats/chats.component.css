@@ -1,19 +1,18 @@
 .contenedorchat {
     border: 3px outset black;
     width: 100%;
-    max-width: 300px;
-    min-width: 220px;
+    max-width: 250px;
+    min-width: 210px;
     height: auto;
     background: black;
     color: gray;
     font-family: cursive;
     font-size: 12px;
     border-radius: 5px 5px 5px 5px;
-    margin: auto;
+    opacity: 0.85
 }
 
 .chat-window {
-    min-width: 210px;
     height: 300px;
     overflow: hidden;
     border: 3px outset gray;
