@@ -8,9 +8,14 @@ import { Router } from  '@angular/router'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor( private router: Router,) { }
+  constructor( private router: Router,) { 
+    let seleccionaFotter = document.getElementById('team');
+  }
 
   ngOnInit() {
+  }
+  irFooter(){
+    document.getElementById("team").scrollIntoView({ behavior: "smooth" });
   }
 
 }

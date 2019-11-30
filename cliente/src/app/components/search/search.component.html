@@ -129,11 +129,16 @@
 
 
                 <!--<div class="container-fluid col-sm-12  align-items-center animated  fadein fast">-->
-                <div *ngIf="mostrar" class="container-fluid col-lg-12 col-sm-12 d-flex justify-content-center animated fadeIn" style="padding:2px;height:auto;width:90%; margin-bottom:auto;">
-                    <br>
-
+                <br>
+                <div *ngIf="mostrar" class="container-fluid col-lg-12 col-sm-12 d-flex justify-content-center animated fadeIn">
+                    <span class ="estilotitulo">LIST OF FLIGHTS</span>
+                </div>
+                <div *ngIf="mostrar" class="container-fluid col-lg-12 col-sm-12 d-flex justify-content-center animated fadeIn" style="height:auto;width:90%; margin-bottom:auto;">
+                    
 
                     <table class="table table-responsive estilotabla">
+                         
+
                         <thead class="" style="background-color: #0B173B; color:white;opacity:0.85;z-index:1;margin:0px;font-size:10px; width:100%;cursor:pointer;">
                             <th> # </th>
                             <th> FLIGHT </th>

@@ -51,7 +51,11 @@ export class DataService {
      if( market=="" && flightini=="" && flightope=="" && origen=="" && destino=="" && fechainit==undefined){
       return this.http.get(this.URL_API +`?codope=${codope}`)  
     }
-    //
+    //SOLO FLIGHTINI
+    if( market=="" && codope=="" && flightope=="" && origen=="" && destino=="" && fechainit==undefined){
+      return this.http.get(this.URL_API +`?flightini=${flightini}`)  
+    }
+    //NONE
     if(market=="" && flightini=="" && codope=="" && flightope=="" && origen=="" && destino=="" && fechainit==undefined){
       return this.http.get(this.URL_API +`?none`) 
     }

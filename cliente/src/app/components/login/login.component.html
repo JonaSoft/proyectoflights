@@ -25,13 +25,13 @@
 
         <div class="card-content">
          <!-- action="javascript:;" method="post"-->
-          <form id="login-form" (submit)="login()">
+          <form id="login-form" (submit)="login(forma)" #forma="ngForm">
             <!--(submit)="login()">-->
             <div class="input-field">
-              <input placeholder="User" id="email" type="email" name="email" [(ngModel)]="email" class="validate">
+              <input placeholder="User" id="email" type="email" name="email" [(ngModel)]="usuario.email" class="validate" required>
             </div>
             <div class="input-field">
-              <input placeholder="Password" id="password" type="password" name="password" [(ngModel)]="password" class="validate">
+              <input placeholder="Password" id="password" type="password" name="password" [(ngModel)]="usuario.password" class="validate"required>
             </div>
             <div *ngIf='alerta' class="forget-container">
               <!--<p class="forget-psw">WARNING...!!!</p><hr>-->

@@ -41,12 +41,13 @@ export class SearchComponent implements OnInit {
       'destino':new FormControl(''),
       'fechainit': new FormControl('')
    })
-
+  
    }
    public clientes = [];
   ngOnInit() {
   
   }
+ 
   getFlights() {
     this.data=[];
     /*this.dataService.getFlights()

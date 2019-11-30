@@ -25,17 +25,19 @@
 
 .clasetextarea {
     color: black;
-    background-color: whitesmoke;
+    /*background-color: whitesmoke;*/
     font-size: 12px;
     vertical-align: middle;
     /*width: 10px;*/
     margin: 0px;
-    width: 450px
+    width: 450px;
+    border:1px solid rgba(26, 89, 226, 0.884)
 }
 
 .timecelda {
-    background-color: whitesmoke;
-    width: 50px
+ 
+    width: 50px;
+    border:1px solid rgba(26, 89, 226, 0.884)
 }
 
 .clasepointer {
@@ -44,6 +46,7 @@
     cursor: pointer;
     background-color: rgb(242, 243, 156);
     width: 75px;
+    border:1px solid rgba(26, 89, 226, 0.884)
 }
 
 .clasepointerlink {
@@ -53,29 +56,34 @@
     font-size: 17px;
     background-color: rgb(242, 243, 156);
     width: 75px;
+    border:1px solid rgba(26, 89, 226, 0.884)
 }
-
+tr{
+    border:1px solid rgba(26, 89, 226, 0.884)
+}
 td {
     vertical-align: middle;
     width: 75px;
     height: auto;
     margin: 0px;
-    background-color: whitesmoke;
+   
     color: black;
+    border:1px solid rgba(26, 89, 226, 0.884)
 }
 
 .fondocasilla {
-    background-color: whitesmoke;
+  
     border: 1px solid black
 }
 
 .fondofecha {
-    background-color: whitesmoke;
+   
     border-radius: 5px 5px 5px 5px;
     height: 25px;
     text-align: center;
     width: auto;
     font-size: 12px;
+    border:1px solid rgba(26, 89, 226, 0.884)
 }
 
 th {
@@ -182,6 +190,12 @@ th {
     min-height: auto;
     margin-top: 3%;
    
+}
+.estilotitulo{
+    font-size: 2rem;
+    color: red;
+    font-family:cursive;
+    text-shadow: 3px 3px 2px black;
 }
 
 .estilobody {

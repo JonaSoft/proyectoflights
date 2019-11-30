@@ -10,8 +10,15 @@
                         <img src="{{paises.flag}}" width="75" height="50" alt="...">
                     </div>
                     <div class="card-body">
-                        <p class="card-text">{{paises.name}} </p>
-                        <p class="card-text">{{paises.flag}} </p>
+                        <h6 class="card-text">{{paises.name}} </h6>
+                        <div class="text-left">
+                            <span class="card-text">Capital: {{paises.capital}} </span><br>
+                            <span class="card-text">Code: {{paises.alpha2Code}} </span><br>
+                            <span class="card-text">Region: {{paises.region}} </span><br>
+                            <span class="card-text">Sub-Region: {{paises.subregion}} </span><br>
+                            <span class="card-text">Lat: {{paises.latlng[0]|number:'1.2-2'}} </span>
+                            <span class="card-text">Lon: {{paises.latlng[1]|number:'1.2-2'}} </span>
+                        </div>
                     </div>
 
                 </div>

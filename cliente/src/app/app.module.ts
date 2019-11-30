@@ -40,7 +40,7 @@ import { CiudadesComponent } from './components/ciudades/ciudades.component';
     APP_ROUTING,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule   
+    ReactiveFormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
