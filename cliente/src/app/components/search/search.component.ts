@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   _origen:string;
   _destino:string;
   _fechainit:any;
+  _fechareg:any;
   loading:boolean=false;
   mostrar:boolean=false;
   aviso:boolean=false;
@@ -76,13 +77,15 @@ export class SearchComponent implements OnInit {
     this._flightope= this.forma.value.flightope;
     this._origen = this.forma.value.origen.toUpperCase();
     this._destino = this.forma.value.destino.toUpperCase();
+    this._fechareg = this.forma.value.fechainit;
+    this._fechareg = this.forma.value.fechainit.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
 
-    
+    console.log(this._fechareg)
     this.view=false;
     this.hide=true;
     this.loading = true;
     //console.log(this.datos)
-    this.dataService.mostrarDataForm(this._market,this._flightini,this._codope,this._flightope,this._origen,this._destino,this._fechainit)
+    this.dataService.mostrarDataForm(this._market,this._flightini,this._codope,this._flightope,this._origen,this._destino,this._fechareg)
     .subscribe(res => {
       for(let i in res['flights']){
         this.data.push(res['flights'][i]);

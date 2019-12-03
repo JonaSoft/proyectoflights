@@ -177,6 +177,34 @@ app.get('/flights', async(req, res) => {
         })
         return
     }
+    //CONSULTA POR FECHA
+    if (cadena.startsWith("fechareg=",9)) {
+        //console.log("paso market");
+        console.log("paso SOLO flightini")
+        let parametro=cadena.substr(18,10);
+        //let parametro2=cadena.substr(29,4);
+        console.log(parametro);
+        //console.log(parametro2);
+        await modeloFlight.find({fechareg:parametro})
+        .exec((err,dataFlights)=>{  //Ejecuta el query
+            if (err){
+                return res.status(400).json({
+                    ok:false,
+                    err
+                });
+            }
+            //modeloFlight.count((err,conteo)=>{
+                res.json({
+                    ok: true,
+                    flights:dataFlights,
+                    //total:conteo
+                })     
+            //})
+            
+        })
+        return
+    }
+
     // CONSULTA POR FLIGHTINI
 
     if (cadena.startsWith("flightini=",9)) {

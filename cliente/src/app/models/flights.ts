@@ -13,7 +13,7 @@ export class Flights {
     flightope:String;
     timedep:String;
     timearr:String;
-    fechareg:String;
+    fechareg:any;
     img:String
 }
 

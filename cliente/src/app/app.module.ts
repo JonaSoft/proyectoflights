@@ -13,8 +13,8 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoadingComponent } from './components/loading/loading.component';
-import { HomeComponent } from './components/home/home.component';
-import { MantenaiceComponent } from './components/mantenaice/mantenaice.component';
+//import { HomeComponent } from './components/home/home.component';
+//import { MantenaiceComponent } from './components/mantenaice/mantenaice.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { EnviarHaciaComponent } from './components/enviar-hacia/enviar-hacia.component';
@@ -27,8 +27,8 @@ import { CiudadesComponent } from './components/ciudades/ciudades.component';
     SearchComponent,
     NavbarComponent,
     LoadingComponent,
-    HomeComponent,
-    MantenaiceComponent,
+    //HomeComponent,
+    //MantenaiceComponent,
     FooterComponent,
     ChatsComponent,
     EnviarHaciaComponent,

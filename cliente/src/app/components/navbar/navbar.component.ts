@@ -17,5 +17,8 @@ export class NavbarComponent implements OnInit {
   irFooter(){
     document.getElementById("team").scrollIntoView({ behavior: "smooth" });
   }
+  logout(){
+    this.router.navigateByUrl('/login')
+  }
 
 }
