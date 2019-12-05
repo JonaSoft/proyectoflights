@@ -9,6 +9,7 @@ const app = express();
 //let ciudades = require('../uploads/ciudades')
 app.use(fileUpload({ useTempFiles: true }));
 let paises=[];
+let ciudades=[];
 
 //obtener paises
 app.get('/flights/paises',async(req,res)=>{
@@ -20,7 +21,7 @@ app.get('/flights/paises',async(req,res)=>{
             reject(err) 
         }else{
             data = data.trim();
-            obj = JSON.parse(data);
+            let obj = JSON.parse(data);
             for (let i in obj){
                 paises.push(obj[i])
             }
@@ -29,7 +30,29 @@ app.get('/flights/paises',async(req,res)=>{
             })     
         }
     })
-}) 
+})
+
+//obtener ciudades
+app.get('/flights/ciudades',async(req, res)=>{
+    ciudades=[]
+    let archivoCiudades = " ";
+    archivoCiudades = 'server/assets/ciudades.json';
+    fs.readFile(archivoCiudades,'utf8', async(err,data)=>{
+      if(err)  {
+          reject(err)
+      }else{
+          data = data.trim();
+          let obj = JSON.parse(data);
+          for(let i in obj){
+                ciudades.push(obj[i] )
+          }
+          res.json({
+              ciudades
+          })
+      }
+    })
+
+})
 
 //obtener todos los flights
 app.get('/flights', async(req, res) => {

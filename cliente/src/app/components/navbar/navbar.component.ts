@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from  '@angular/router'
+import { Router } from  '@angular/router';
+import { AuthService } from '../../servicios/auth.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-navbar',
@@ -8,16 +10,15 @@ import { Router } from  '@angular/router'
 })
 export class NavbarComponent implements OnInit {
 
-  constructor( private router: Router,) { 
-    let seleccionaFotter = document.getElementById('team');
-  }
+  constructor( private router: Router,
+               private afAuth: AuthService
+              ) { }
 
   ngOnInit() {
   }
-  irFooter(){
-    document.getElementById("team").scrollIntoView({ behavior: "smooth" });
-  }
+  
   logout(){
+    this.afAuth.logout();
     this.router.navigateByUrl('/login')
   }
 

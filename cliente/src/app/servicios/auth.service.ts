@@ -21,11 +21,10 @@ export class AuthService {
    ){
       this.leerToken()
     }
-   /*
-   logoutAuth(){
-      admin@asi.com
-      return this.afAuth.auth.signOut();
-   }*/
+   logout(){
+         localStorage.removeItem('token')
+   }
+
    login( usuario:any){
       const authData ={
          ...usuario,
@@ -53,11 +52,11 @@ export class AuthService {
       if ( localStorage.getItem('token')){
             this.userToken = localStorage.getItem('token');
       } else {
-               this.userToken = "";
+            this.userToken = "";
       }
    }
    //PREGUNTAR SI ESTA AUTENTICADO
    estaAutenticado(): boolean {
-      return this.userToken.length> 2
+      return this.userToken.length > 10
    }
 }

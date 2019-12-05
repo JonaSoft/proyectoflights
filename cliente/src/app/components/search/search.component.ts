@@ -3,7 +3,9 @@ import { DataService } from 'src/app/servicios/data.service';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Flights } from '../../models/flights';
 import { ExporterService } from '../../servicios/enviarhacia.service';
-import { RouteConfigLoadStart } from '@angular/router';
+import { AuthService } from '../../servicios/auth.service';
+import { Router } from '@angular/router';
+//import { RouteConfigLoadStart } from '@angular/router';
 
 
 @Component({
@@ -26,12 +28,16 @@ export class SearchComponent implements OnInit {
   aviso:boolean=false;
   view:boolean=true;
   hide:boolean=false;
+  public byciudades:boolean = false;
+  public bypaises:boolean = true;
   data:Flights[]=[];
   
 
 
   constructor(private dataService:DataService,
-              private aExcel: ExporterService) {
+              private aExcel: ExporterService,
+              private auth: AuthService,
+              private router: Router) {
     
     this.forma = new FormGroup({
       'market':new FormControl(''),
@@ -44,11 +50,20 @@ export class SearchComponent implements OnInit {
    })
   
    }
-   public clientes = [];
   ngOnInit() {
-  
+    console.log('ingresa a validacion')
+    this.auth.leerToken()
+    if(this.auth.estaAutenticado()){
+      console.log('pasó el true')
+      return true
+    } else {
+      this.router.navigateByUrl('/login')
+      console.log('pasó el false')
+      return false
+
+    }
   }
- 
+ public clientes = [];
   getFlights() {
     this.data=[];
     /*this.dataService.getFlights()
@@ -78,7 +93,7 @@ export class SearchComponent implements OnInit {
     this._origen = this.forma.value.origen.toUpperCase();
     this._destino = this.forma.value.destino.toUpperCase();
     this._fechareg = this.forma.value.fechainit;
-    this._fechareg = this.forma.value.fechainit.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
+    this._fechareg = this.forma.value.fechainit.split('-').reverse().join('/');
 
     console.log(this._fechareg)
     this.view=false;
@@ -123,8 +138,6 @@ export class SearchComponent implements OnInit {
     this.view = true;
     this.mostrar = false;
     this.aviso = false;
-    //this.flightArr = [ ];
-    //this.flightFinal = [ ];
     this._market = "";
     this._flightini=0;
     this._codope="";

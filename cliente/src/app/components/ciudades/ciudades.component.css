@@ -16,20 +16,28 @@
 
 .cities-window {
     min-width: 210px;
-    height: 720px;
+    height: 700px;
     overflow: hidden;
     border: 3px outset gray;
     border-radius: 20px;
     padding: 0px;
-    background: rgb(242, 243, 156);
+    /*background: rgb(242, 243, 156);*/
     color: black;
     border-radius: 5px 5px 5px 5px
 }
 
 .app-paises {
     overflow-y: scroll;
-    height: 700px;
+    height: 712px;
     padding: 2px;
     font-family: cursive;
-    font-size: 12px;
+    font-size: 14px;
+    color  :rgba(240, 157, 2, 0.993)
+}
+input {
+    text-transform: uppercase;
+    font-size: 13px;
+    width :100%;
+    border-radius:5px 5px 5px 5px;
+    font-family: tahoma
 }
