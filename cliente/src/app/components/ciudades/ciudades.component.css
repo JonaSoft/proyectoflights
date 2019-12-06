@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 300px;
     min-width: 220px;
-    height: 800px;
+    height: 820px;
     background: #0B173B;
     color: rgb(247, 241, 241);
     font-family: cursive;
@@ -21,7 +21,7 @@
     border: 3px outset gray;
     border-radius: 20px;
     padding: 0px;
-    /*background: rgb(242, 243, 156);*/
+    background: rgb(242, 243, 156);
     color: black;
     border-radius: 5px 5px 5px 5px
 }
@@ -40,4 +40,7 @@ input {
     width :100%;
     border-radius:5px 5px 5px 5px;
     font-family: tahoma
+}
+.titulociudad{
+font-size:1rem;
 }

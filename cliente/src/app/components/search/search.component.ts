@@ -28,8 +28,6 @@ export class SearchComponent implements OnInit {
   aviso:boolean=false;
   view:boolean=true;
   hide:boolean=false;
-  public byciudades:boolean = false;
-  public bypaises:boolean = true;
   data:Flights[]=[];
   
 

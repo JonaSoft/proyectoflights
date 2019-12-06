@@ -15,7 +15,7 @@ export class PaisesService {
   mostrarDataPaises(){
     return this.httpPais.get(this.URL_PAIS)
   }
-  mostrarDataCiudades(valor:any){
+  mostrarDataCiudades(){
     return this.httpCiudades.get(this.URL_CIUDADES)
   }
 

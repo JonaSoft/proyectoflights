@@ -6,17 +6,6 @@
     width: 100%;
     opacity: 0.75
 }
-
-.lateralfondomain {
-    background-image: url("../../../assets/img/winplomo.jpg");
-    background-size: cover;
-    min-height: 900px;
-    height: auto;
-    width: 100%;
-    max-width: 300px;
-    opacity: 0.75
-}
-
 .regresar {
     color: black;
     font-family: cursive;
@@ -190,6 +179,9 @@ th {
     min-height: auto;
     margin-top: 3%;
    
+}
+.tituloform{
+    font-size:1rem;   
 }
 .estilotitulo{
     font-size: 2rem;

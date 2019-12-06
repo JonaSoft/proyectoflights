@@ -11,6 +11,7 @@ export class CiudadesComponent implements OnInit {
   public bypaises:boolean = true;
   public linkregresar:boolean =false;
   public verinput:boolean = true;
+  public mensajecard:boolean = false;
   constructor(private paises:PaisesService,
               private ciudades:PaisesService) { }
   public data = [];
@@ -21,7 +22,8 @@ export class CiudadesComponent implements OnInit {
   ngOnInit() {
     //this.data=[]
     this.paises.mostrarDataPaises()
-    .subscribe(res=>{
+    .subscribe((res)=>{
+      console.log(res);
       for(let i in res['paises']){
         this.data.push(res['paises'][i])
       }
@@ -32,15 +34,26 @@ export class CiudadesComponent implements OnInit {
   searchCiudades(event:any):void{
     this.valor = event.target.value;
     this.valor = this.valor.toUpperCase();
-    this.ciudades.mostrarDataCiudades(this.valor)
+    this.ciudades.mostrarDataCiudades()
     .subscribe(res=>{
       for(let i in res['ciudades']){
-        if (this.valor == res['ciudades'][i].codeciudad){
+        if (this.valor == res['ciudades'][i].codeciudad) {
           this.dataciudades.push(res['ciudades'][i]);
           this.searchPaises(res['ciudades'][i].codepais)
+        }else{
+            if (this.valor == res['ciudades'][i].nombreciudad){
+              console.log('paso ciudad');
+              this.dataciudades.push(res['ciudades'][i]);
+              this.searchPaises(res['ciudades'][i].codepais)
+            }
         }
       }
-      //console.log(this.dataciudades);
+      console.log(this.dataciudades);
+      if (this.dataciudades.length==0){
+        this.verinput= false;  
+        this.linkregresar= true;
+        this.mensajecard=true;
+      }
       this.bypaises=false;
       this.byciudades=true;
       this.verinput= false
@@ -83,10 +96,11 @@ export class CiudadesComponent implements OnInit {
     })
   }
   regresar(){
-    this.byciudades=false;
-    this.bypaises=true;
-    this.linkregresar=false;
-    this.verinput= true;
+    this.mensajecard = false;
+    this.byciudades = false;
+    this.bypaises = true;
+    this.linkregresar = false;
+    this.verinput = true;
     this.datafinal = [];
     this.dataciudades = []
   }
