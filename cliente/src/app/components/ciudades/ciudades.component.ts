@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { PaisesService } from '../../servicios/paises.service'
 
 @Component({
@@ -31,70 +31,93 @@ export class CiudadesComponent implements OnInit {
     })
   }
 
-  searchCiudades(event:any):void{
+  searchCiudades (event:any):void{
     this.valor = event.target.value;
     this.valor = this.valor.toUpperCase();
     this.ciudades.mostrarDataCiudades()
     .subscribe(res=>{
       for(let i in res['ciudades']){
-        if (this.valor == res['ciudades'][i].codeciudad) {
+        //busca por code ciudad
+        if (this.valor === res['ciudades'][i].codeciudad) {
+          console.log(this.valor);
           this.dataciudades.push(res['ciudades'][i]);
-          this.searchPaises(res['ciudades'][i].codepais)
-        }else{
-            if (this.valor == res['ciudades'][i].nombreciudad){
-              console.log('paso ciudad');
-              this.dataciudades.push(res['ciudades'][i]);
-              this.searchPaises(res['ciudades'][i].codepais)
-            }
+         this.searchPaises(res['ciudades'][i].codepais)
         }
+        // busca por nombre de ciudad
+        if (this.valor === res['ciudades'][i].nombreciudad){
+          console.log('paso ciudad por nombre');
+          this.dataciudades.push(res['ciudades'][i]);
+          console.log(this.dataciudades)
+          this.searchPaises(res['ciudades'][i].codepais)
+        }
+        //this.searchPaises(res['ciudades'][i].codepais)
       }
-      console.log(this.dataciudades);
-      if (this.dataciudades.length==0){
+      //console.log(this.dataciudades);
+      /*if (this.dataciudades.length==0){
         this.verinput= false;  
         this.linkregresar= true;
         this.mensajecard=true;
-      }
+      }*/
       this.bypaises=false;
       this.byciudades=true;
       this.verinput= false
     })
    
   }
-  searchPaises(valor:any){
-
-    this.paises.mostrarDataPaises()
-    .subscribe(res=>{
-      for(let i in res['paises']){
-        if (valor == res['paises'][i].alpha2Code){
-          this.dataciudades.push(res['paises'][i])
+  searchPaises (valor:any){
+    console.log('codigo de pais ',valor);
+    
+    for(let i in this.data){
+        if (valor == this.data[i].alpha2Code){
+          this.dataciudades.push(this.data[i])
+          console.log(this.dataciudades);
+          if (this.dataciudades[1].regionalBlocs.length==0){
+            this.datafinal.push({
+              codeciudad: this.dataciudades[0].codeciudad,
+              nombreciudad: this.dataciudades[0].nombreciudad,
+              codepais: this.dataciudades[0].codepais,
+              namepais: this.dataciudades[1].name,
+              capitalpais: this.dataciudades[1].capital,
+              region: this.dataciudades[1].region,
+              subregion: this.dataciudades[1].subregion,
+              timezones: this.dataciudades[1].timezones[0],
+              fronteras: this.dataciudades[1].borders,
+              callingcodes: this.dataciudades[1].callingCodes[0],
+              numericodepais: this.dataciudades[1].numericCode,
+              flag: this.dataciudades[1].flag,
+              /*regionalacron: this.dataciudades[1].regionalBlocs[0].acronym,*/
+              //regionalname: this.dataciudades[1].regionalBlocs[0].name,
+              lat: this.dataciudades[1].latlng[0],
+              lon: this.dataciudades[1].latlng[1]
+            })
+            //this.dataciudades=[]
+          }else{
+            this.datafinal.push({
+              codeciudad: this.dataciudades[0].codeciudad,
+              nombreciudad: this.dataciudades[0].nombreciudad,
+              codepais: this.dataciudades[0].codepais,
+              namepais: this.dataciudades[1].name,
+              capitalpais: this.dataciudades[1].capital,
+              region: this.dataciudades[1].region,
+              subregion: this.dataciudades[1].subregion,
+              timezones: this.dataciudades[1].timezones[0],
+              fronteras: this.dataciudades[1].borders,
+              callingcodes: this.dataciudades[1].callingCodes[0],
+              numericodepais: this.dataciudades[1].numericCode,
+              flag: this.dataciudades[1].flag,
+              regionalacron: this.dataciudades[1].regionalBlocs[0].acronym,
+              regionalname: this.dataciudades[1].regionalBlocs[0].name,
+              lat: this.dataciudades[1].latlng[0],
+              lon: this.dataciudades[1].latlng[1]
+            })
+            //this.dataciudades=[]
+          }
+          this.dataciudades=[]
         }
-        //this.data.push(res['paises'][i])
-      }
-      console.log(this.dataciudades)
-      this.datafinal.push({
-        codeciudad: this.dataciudades[0].codeciudad,
-        nombreciudad: this.dataciudades[0].nombreciudad,
-        codepais: this.dataciudades[0].codepais,
-        namepais: this.dataciudades[1].name,
-        capitalpais: this.dataciudades[1].capital,
-        region: this.dataciudades[1].region,
-        subregion: this.dataciudades[1].subregion,
-        timezones: this.dataciudades[1].timezones[0],
-        fronteras: this.dataciudades[1].borders,
-        callingcodes: this.dataciudades[1].callingCodes[0],
-        numericodepais: this.dataciudades[1].numericCode,
-        flag: this.dataciudades[1].flag,
-        regionalacron: this.dataciudades[1].regionalBlocs[0].acronym,
-        regionalname: this.dataciudades[1].regionalBlocs[0].name,
-        lat: this.dataciudades[1].latlng[0],
-        lon: this.dataciudades[1].latlng[1]
-
-
-      })
-      console.log(this.datafinal)
-      this.linkregresar=true
-    })
-  }
+    }
+    this.linkregresar=true;
+    console.log(this.datafinal)
+}
   regresar(){
     this.mensajecard = false;
     this.byciudades = false;
