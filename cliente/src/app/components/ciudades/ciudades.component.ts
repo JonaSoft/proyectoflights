@@ -12,6 +12,7 @@ export class CiudadesComponent implements OnInit {
   public linkregresar:boolean =false;
   public verinput:boolean = true;
   public mensajecard:boolean = false;
+  public encontro:boolean = false;
   constructor(private paises:PaisesService,
               private ciudades:PaisesService) { }
   public data = [];
@@ -34,14 +35,19 @@ export class CiudadesComponent implements OnInit {
   searchCiudades (event:any):void{
     this.valor = event.target.value;
     this.valor = this.valor.toUpperCase();
+    this.encontro=false;
     this.ciudades.mostrarDataCiudades()
     .subscribe(res=>{
+
       for(let i in res['ciudades']){
+        
+        
         //busca por code ciudad
         if (this.valor === res['ciudades'][i].codeciudad) {
           console.log(this.valor);
           this.dataciudades.push(res['ciudades'][i]);
          this.searchPaises(res['ciudades'][i].codepais)
+         this.encontro= true
         }
         // busca por nombre de ciudad
         if (this.valor === res['ciudades'][i].nombreciudad){
@@ -49,8 +55,17 @@ export class CiudadesComponent implements OnInit {
           this.dataciudades.push(res['ciudades'][i]);
           console.log(this.dataciudades)
           this.searchPaises(res['ciudades'][i].codepais)
-        }
+          this.encontro= true
+        } /*else{
+          console.log('error');
+          this.mensajecard=true;
+          return
+        }*/
         //this.searchPaises(res['ciudades'][i].codepais)
+      }
+      if (this.encontro==false){
+        this.mensajecard=true;
+        this.linkregresar= true
       }
       //console.log(this.dataciudades);
       /*if (this.dataciudades.length==0){

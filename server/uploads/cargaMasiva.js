@@ -4,7 +4,7 @@
     let fs = require('fs');
     let modeloFlights = require ('../../server/models/flights')
     setTimeout(()=>{
-        let archivoOrigen ='server/assets/importjson7carga.json';
+        let archivoOrigen ='server/assets/importjson8carga.json';
         fs.readFile(archivoOrigen, 'utf8', async(err, data)=> {
             if (err) throw err;
             data = data.trim();

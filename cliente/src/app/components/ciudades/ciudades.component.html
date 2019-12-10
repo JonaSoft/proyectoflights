@@ -8,14 +8,16 @@
         <!----------------    MENSAJE PARA NO HALLADOS    -------------------------->
         <div *ngIf="mensajecard" class="app-paises">
                 <div class="text-center p-1 " >
-                    <div class="card text-center m-auto p-1 bg-dark" style="width: 11rem;">
-                        <div class="container bg-dark">
-                            <img src="../../../assets/img/CLEANER.png" width="75" height="50" alt="...">
+                    <div class="card text-center m-auto bg-dark" style="width: 11rem;">
+                        <div class="card-body  bg-dark text-warning">
+                            <h6 class="card-text"> No results for your search...!!!! </h6>
                         </div>
-                        <div class="card-body  bg-dark text-white">
-                            <h6 class="card-text"> No results for your search...!!!! Search must be about code or name of cities. </h6>
-                            
-                    </div>
+                        <div class="container bg-dark">
+                            <img src="../../../assets/img/CLEANER.png" width="100%" height="90" >
+                        </div>
+                        <div class="card-body  bg-dark  text-warning">
+                            <h6 class="card-text">Search must be about code or name of cities.</h6>
+                        </div>
                 </div>
             </div>
         </div>
@@ -24,18 +26,17 @@
             <div class="text-center p-1 " *ngFor="let paises of data; let i = index">
                 <div class="card text-center m-auto p-1 bg-dark" style="width: 11rem;">
                     <div class="container bg-dark">
-                        <img src="{{paises.flag}}" width="75" height="50" alt="...">
+                        <br>
+                            <h5 class="card-text text-warning">{{paises.name}} </h5>
+                        <img src="{{paises.flag}}" width="90" height="50" alt="...">
                     </div>
-                    <div class="card-body  bg-dark text-white">
-                        <h6 class="card-text">{{paises.name}} </h6>
-                        <div class="text-left">
+                    <div class="card-body  bg-dark text-white text-left p-1">
                             <span class="card-text">Capital: {{paises.capital}} </span><br>
                             <span class="card-text">Code: {{paises.alpha2Code}} </span><br>
                             <span class="card-text">Region: {{paises.region}} </span><br>
                             <span class="card-text">Sub-Region: {{paises.subregion}} </span><br>
                             <span class="card-text">Lat: {{paises.latlng[0]|number:'1.2-2'}} </span>
                             <span class="card-text">Lon: {{paises.latlng[1]|number:'1.2-2'}} </span>
-                        </div>
                     </div>
                 </div>
             </div>
