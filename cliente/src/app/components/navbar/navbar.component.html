@@ -3,19 +3,25 @@
 
     <div class="row">
         <div class="col-md-6" style="padding:5px;">
-            <img src="./assets/img/favicon.ico" class="rounded" width="50" height="35"alt=""> <span class="margenes"> Code Share Support</span>
+            <img src="./assets/img/favicon.ico" class="rounded" width="50" height="35"alt=""> <span class="margenes"> Code Share Support </span>
+            
         </div>
+        <!--<div class="col-md-2 p-2">
+            <span class="text-success mt-2">{{this.usuario}}</span>
+        </div>-->
         <div class="col-md-6" style="padding:5px;">
+               
             <ul class="nav justify-content-end estilomenu">
+                    <span class="textousuario text-left m-2">  {{ this.usuario}}</span>
                 <!--<li class="nav-item estilomenu" routerLinkActive="active">
               <a id='home' class="nav-item nav-link active ml-2 r estilomenu" [routerLink] = "['/home']">Home</a>
             </li>-->
                 <li class="nav-item" routerLinkActive="active">
                     <a id='search' class="nav-item nav-link active ml-2 r  estilomenu" [routerLink]="['/search']">Home</a>
                 </li>
-                <li class="nav-item" routerLinkActive="active">
+                <!--<li class="nav-item" routerLinkActive="active">
                     <a (click)="irFooter()" id='mantenaice' class="nav-item nav-link active ml-2 r  estilomenu" [routerLink]="[]">About Us</a>
-                </li>
+                </li>-->
 
                 <li class="nav-item">
                     <button (click)="logout()" class="btn btn-danger my-2 my-sm-0 fondologout" type="text">Logout

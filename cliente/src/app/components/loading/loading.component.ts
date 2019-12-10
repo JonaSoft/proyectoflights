@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../servicios/auth.service'
 
 @Component({
   selector: 'app-loading',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loading.component.css']
 })
 export class LoadingComponent implements OnInit {
-
-  constructor() { }
+  usuarioemail:string;
+  constructor(private email:AuthService) { }
 
   ngOnInit() {
+    this.usuarioemail = this.email.leerEmail()
   }
 
 }

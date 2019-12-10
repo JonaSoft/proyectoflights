@@ -31,7 +31,7 @@ mongoose.connect('mongodb://localhost:27017/flights',
 
 app.listen(process.env.PORT, async () => {
     console.log('Escuchando puerto: ', process.env.PORT);
-    await carga.cargaMasiva((err) =>{
+    /*await carga.cargaMasiva((err) =>{
         if (err)console.log(err);
-    });
+    });*/
 });

@@ -15,6 +15,7 @@ export class AuthService {
   private url='https://identitytoolkit.googleapis.com/v1/accounts:';
   private apiKey='AIzaSyDW6WxVH-l3ZWogVOGgzKd5U7nBOTy3UH4';
   userToken:string;
+  usuarioEmail:string
   constructor(
       //public afAuth: AngularFireAuth
       private http:HttpClient
@@ -22,7 +23,8 @@ export class AuthService {
       this.leerToken()
     }
    logout(){
-         localStorage.removeItem('token')
+         localStorage.removeItem('token');
+         localStorage.removeItem('email')
    }
 
    login( usuario:any){
@@ -36,7 +38,9 @@ export class AuthService {
       ).pipe(
          map(res => {
             console.log('entro en el map del RXJS');
+            console.log(res);
             this.guardarToken(res['idToken']);
+            this.guardarEmail(res['email']);
             return res;
          })
 
@@ -46,6 +50,10 @@ export class AuthService {
          this.userToken = idToken;
          localStorage.setItem('token',idToken);
    }
+   private guardarEmail(email:string){
+      this.usuarioEmail = email;
+      localStorage.setItem('email',email);
+}
 
    //LEER TOKEN DEL LOCALSTORAGE
    leerToken(){
@@ -55,6 +63,16 @@ export class AuthService {
             this.userToken = "";
       }
    }
+   //LEER USUARIO
+   leerEmail(){
+      if ( localStorage.getItem('email')){
+            console.log(localStorage.getItem('email'))
+            return this.usuarioEmail = localStorage.getItem('email');
+      } else {
+            return this.usuarioEmail = "";
+      }
+   }
+
    //PREGUNTAR SI ESTA AUTENTICADO
    estaAutenticado(): boolean {
       return this.userToken.length > 10
