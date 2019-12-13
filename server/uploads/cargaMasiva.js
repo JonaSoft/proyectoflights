@@ -4,17 +4,14 @@
     let fs = require('fs');
     let modeloFlights = require ('../../server/models/flights')
     setTimeout(()=>{
-        let archivoOrigen ='server/assets/importjson8carga.json';
+        let archivoOrigen ='server/assets/importjson10carga.json';
         fs.readFile(archivoOrigen, 'utf8', async(err, data)=> {
             if (err) throw err;
             data = data.trim();
             obj = JSON.parse(data);
-            //console.log(data)
-            //console.log(obj.length());
-                let cont=0
-               
+            let cont=0
                 for (let i in obj){
-                    //console.log(obj[i]);
+            
                     let nombreImagen = obj[i].market+obj[i].flightini+obj[i].fechainit;
                     let patron = "/";
                     nombreImagen=(nombreImagen.replace(patron,"-"));
@@ -39,10 +36,6 @@
                     });
                     await flight.save((err,res)=>{
                         if (err) {
-                            /*if (flight.cliente){
-                                console.log(`cliente ${flight.cliente} ya existe`);
-                                return
-                            }*/
                             console.log( `registro ${flight.cliente} no grabo`);
                             console.log(err);
                             return

@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+// firebase para el chat o usuarios online
+/*import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';*/
 
 
 //Rutas
@@ -40,7 +42,8 @@ import { CiudadesComponent } from './components/ciudades/ciudades.component';
     APP_ROUTING,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule  
+    ReactiveFormsModule,
+    /*AngularFireModule.initializeApp(environment.firebase), */ 
   ],
   providers: [],
   bootstrap: [AppComponent]

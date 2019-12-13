@@ -2,36 +2,39 @@
 
 
     <div class="row">
-        <div class="col-md-6" style="padding:5px;">
+        <div class="col-lg-3 col-sm-12" style="padding:5px;">
             <img src="./assets/img/favicon.ico" class="rounded" width="50" height="35"alt=""> <span class="margenes"> Code Share Support </span>
             
         </div>
-        <!--<div class="col-md-2 p-2">
-            <span class="text-success mt-2">{{this.usuario}}</span>
-        </div>-->
-        <div class="col-md-6" style="padding:5px;">
+        <div class="col-lg-5  col-sm-12 container d-flex justify-content-end" style="padding:5px;">
                
-            <ul class="nav justify-content-end estilomenu">
-                    <span class="textousuario text-left m-2">  {{ this.usuario}}</span>
-                <!--<li class="nav-item estilomenu" routerLinkActive="active">
-              <a id='home' class="nav-item nav-link active ml-2 r estilomenu" [routerLink] = "['/home']">Home</a>
-            </li>-->
-                <li class="nav-item" routerLinkActive="active">
-                    <a id='search' class="nav-item nav-link active ml-2 r  estilomenu" [routerLink]="['/search']">Home</a>
-                </li>
-                <!--<li class="nav-item" routerLinkActive="active">
-                    <a (click)="irFooter()" id='mantenaice' class="nav-item nav-link active ml-2 r  estilomenu" [routerLink]="[]">About Us</a>
-                </li>-->
+           
+        </div>
+        <div class="col-lg-4 col-sm-12 container d-flex justify-content-end">
+                <ul class="nav justify-content-end ">
+                        <!--<li class="nav-item estilomenu" routerLinkActive="active">
+                        <a id='home' class="nav-item nav-link active ml-2 r estilomenu" [routerLink] = "['/home']">Home</a>
+                        </li>-->
+                        <li class="nav-item" routerLinkActive="active">
+                            <a id='search' class="nav-item nav-link ml-2 r  estilomenuinicio" [routerLink]="['/search']">Home</a>
+                        </li>
+                        <!--<li class="nav-item" routerLinkActive="active">
+                            <a (click)="irFooter()" id='mantenaice' class="nav-item nav-link active ml-2 r  estilomenu" [routerLink]="[]">About Us</a>
+                        </li>-->
+        
+                        <li class="nav-item">
+                            <a (click)="logout()" href="#"class=" nav-item nav-link r estilomenu" type="text">Logout</a>
+                        </li>
+                        
+                </ul>
 
-                <li class="nav-item">
-                    <button (click)="logout()" class="btn btn-danger my-2 my-sm-0 fondologout" type="text">Logout
-            </button>
-                </li>
-            </ul>
+                <img src="../../../assets/img/usuarioblack.png" class="rounded-circle m-2" width="25" height="25"alt="">    
+                <span class="textousuario text-left mt-2">  {{ this.usuario}}</span>
         </div>
     </div>
 </div>
-<!--<a id='home' class="nav-item nav-link active ml-2 r fondologout" [routerLink] = "['/home']">Home</a>
+<!--<button (click)="logout()" class="btn btn-danger my-2 my-sm-0 fondologout" type="text">Logout</button>
+    <a id='home' class="nav-item nav-link active ml-2 r fondologout" [routerLink] = "['/home']">Home</a>
   <a id='mantenaice' class="nav-item nav-link active ml-2 r fondonavbar" [routerLink] = "['/mantenaice']">Mantenaice</a>
   <a id='search' class="nav-item nav-link active ml-2 r fondonavbar" [routerLink] = "['/search']">Search</a>
   <button  (click)="logout()"
